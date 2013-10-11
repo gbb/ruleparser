@@ -11,9 +11,10 @@ This program translates spreadsheets into numpy algebra and SQL.
 This program is used in combination with rbuild. See http://github.com/gbb/rbuild.
 You are welcome to adapt this program to suit your own needs.
 
-The program takes a CSV spreadsheet (e.g. from Excel) in a particular format as the main 
-source of input. The idea is to write a transformation in the following format with the 
-spreadsheet. There are some settings in rp_settings.py that you can adjust.
+The program takes a CSV spreadsheet (e.g. from Excel or Openoffice) in a 
+particular format as the main source of input. The idea is to write a 
+transformation in the following format with the spreadsheet. There are 
+some settings in rp_settings.py that you can adjust.
 
 Input Format
 -----
@@ -47,7 +48,8 @@ Outputs values:
 How to run
 -------
 
-How to run with an example file: 
+How to run the code with an example file: 
+
 > python ruleparser.py test.csv my_postgres_table
 
 Author and license
@@ -65,15 +67,12 @@ Thanks to the Norwegian Forest & Landscape Institute for open sourcing this work
 Notes
 -----
 
-1. 
-If you are having trouble getting your spreadsheet to parse, enable debugging
+1. If you are having trouble getting your spreadsheet to parse, enable debugging
 in rp_settings.py, and see which cell is causing the problem. It's common to
 accidentally use e.g. 1..3 instead of 1...3. (1..3 can be parsed as a date 
 in openoffice). 
 
 
-2. 
-
-This program uses the pyparsing module - take a look at src/inputs_to_code.py.
+2. This program uses the pyparsing module - take a look at src/inputs_to_code.py.
 It's pretty useful.
 
