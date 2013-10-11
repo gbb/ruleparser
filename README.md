@@ -50,9 +50,6 @@ How to run
 How to run with an example file: 
 > python ruleparser.py test.csv my_postgres_table
 
-How to run with the local dyrkbarjord dataset: 
-> python ruleparser.py dddb/dyrkbarjord-1.csv all_norway_poly
-
 Author and license
 -----
 
