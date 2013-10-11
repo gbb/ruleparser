@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import codecs
 import sys
 import os.path
 sys.dont_write_bytecode=True
@@ -45,6 +46,10 @@ print "------------   CUT HERE:  "+output_calc_filename+"    ----------------\n"
 print metadata_bash_string, "\n"
 print formula_string, "\n\n"
 
+with codecs.open(output_calc_filename, 'w', 'utf-8') as f:
+  f.write(metadata_bash_string + "\n")
+  f.write(formula_string+"\n")
+
 # 3. parse grid for outputs. 
 # write a second option for raster outputs later. for now, geom. 
 # filter for out_ columns. then simply substitute all values in the row, with quoting
@@ -54,4 +59,7 @@ sql_transform=outputs_to_code(*grid_tuple, input_filename=spreadsheet, layer_nam
 
 print "------------   CUT HERE:  "+output_sql_filename+"    ----------------\n"
 print sql_transform, "\n\n"
+
+with codecs.open(output_sql_filename, 'w', 'utf-8') as f:
+  f.write(sql_transform + "\n")
 

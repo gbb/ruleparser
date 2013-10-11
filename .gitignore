@@ -4,3 +4,5 @@ old*
 *sublime*
 *.lock*
 *dddb*
+add_values.sql
+calc_new.sh
