@@ -19,15 +19,17 @@ some settings in rp_settings.py that you can adjust.
 Input Format
 -----
 
+The input is a CSV spreadsheet in the following format (see test.csv).
+
 1st line of spreadsheet: metadata variable names for this spreadsheet/transform
 
 2nd line of spreadsheet: metadata values describing this spreadsheet/transform
 
-3rd line: empty, for visual appearance
+3rd line: empty, for a tidy visual appearance
 
 4th line: each cell describes either an input, an output, or a comment field.
 By default all fields are comment fields and are ignored, unless marked by in/ or out/
-input fields have the format:   in/NAME/
+input fields have the format:   in/NAME/input_raster_filename
 output fields have the format:  out/NAME/postgres_datatype
 
 5th line onwards:
@@ -41,9 +43,21 @@ Input values:
 
   Lists:   1, 2, 3...10, 1...100      simple numbers and closed ranges
 
-Outputs values: 
+
+- Empty rows are ignored.
+- Rows beginning with # are ignored.
+- In row 4, columns that don't contain 'in/x/y' or 'out/x/y' are ignored. 
+
+Output values: 
   
-  Whichever value is to be produced for the SQL database.
+- Whichever values are to be produced for the SQL database.
+
+Program outputs
+---
+
+The program will generate two files (and dump to screen). "new_calc.py" 
+hascode that carries out a high-speed numpy calculation and 
+"add_values.sql" hascode to update a polygonized raster. 
 
 How to run
 -------
