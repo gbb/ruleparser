@@ -56,8 +56,8 @@ Program outputs
 ---
 
 The program will generate two files (and dump to screen). "new_calc.py" 
-hascode that carries out a high-speed numpy calculation and 
-"add_values.sql" hascode to update a polygonized raster. 
+has code that carries out a high-speed numpy calculation and 
+"add_values.sql" has code to update a polygonized raster. 
 
 How to run
 -------
