@@ -50,7 +50,7 @@ How to run
 
 How to run the code with an example file: 
 
-> python ruleparser.py test.csv my_postgres_table
+> ./ruleparser.py test.csv my_postgres_table
 
 Author and license
 -----
