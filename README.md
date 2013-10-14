@@ -8,12 +8,21 @@ Purpose
 
 This program translates spreadsheets into numpy algebra and SQL.
 
-This program is used in combination with rbuild. See http://github.com/gbb/rbuild.
-You are welcome to adapt this program to suit your own needs.
+The program takes a CSV spreadsheet (e.g. from Excel or Openoffice) in a specified format as the main source of input. 
+The spreadsheet describes a grid-based GIS transformation of the input rasters.
 
-The program takes a CSV spreadsheet (e.g. from Excel or Openoffice) in a 
-particular format as the main source of input. The spreadsheet describes 
-a grid-based GIS transformation of the input rasters.
+Why is this useful? Spreadsheets are easy to visualise and edit, especially for non-programmers, and relatively complex 
+map transformation logic can be written and checked without needing to decipher GIS functions. By using regular grid 
+cells, non-GIS users don't need to worry about things like geometry/shape/area. By using high-speed numpy functions and 
+GDAL, users don't need to worry about how to optimise the code, it's almost guaranteed to run fast.
+
+This program is used in combination with rbuild. See http://github.com/gbb/rbuild.
+
+In our work with national maps, ruleparser and rbuild allow us to transform several national maps using a moderately 
+complex set of rules at 10x10m resolution in minutes. The area covered by these maps is 1200km by 1500km.
+
+You are welcome (and encouraged) to adapt this program to suit your own needs. Some hints for alternative grammars are 
+provided in the source code.
 
 There are some settings in rp_settings.py that you can adjust.
 
