@@ -12,9 +12,10 @@ This program is used in combination with rbuild. See http://github.com/gbb/rbuil
 You are welcome to adapt this program to suit your own needs.
 
 The program takes a CSV spreadsheet (e.g. from Excel or Openoffice) in a 
-particular format as the main source of input. The idea is to write a 
-transformation in the following format with the spreadsheet. There are 
-some settings in rp_settings.py that you can adjust.
+particular format as the main source of input. The spreadsheet describes 
+a grid-based GIS transformation of the input rasters.
+
+There are some settings in rp_settings.py that you can adjust.
 
 Input Format
 -----
@@ -25,15 +26,17 @@ The input is a CSV spreadsheet in the following format (see test.csv).
 
 2nd line of spreadsheet: metadata values describing this spreadsheet/transform
 
-3rd line: empty, for a tidy visual appearance
+3rd line: empty
 
-4th line: each cell describes either an input, an output, or a comment field.
-By default all fields are comment fields and are ignored, unless marked by in/ or out/
-input fields have the format:   in/NAME/input_raster_filename
-output fields have the format:  out/NAME/postgres_datatype
+4th line: each column will be either an input, an output, or a comment field.
+By default all columns are comment fields and are ignored, unless marked by in/ or out/
+
+- Input fields have the format:   in/NAME/input_raster_filename
+
+- Output fields have the format:  out/NAME/postgres_datatype
 
 5th line onwards:
-Input and output values according to the format specified in the 4th line, as follows:
+Input and output values according to the column format specified in the 4th line, as follows:
 
 Input values: 
 
@@ -55,9 +58,11 @@ Output values:
 Program outputs
 ---
 
-The program will generate two files (and dump to screen). "new_calc.py" 
-has code that carries out a high-speed numpy calculation and 
-"add_values.sql" has code to update a polygonized raster. 
+The program will generate two files (and dump to screen). 
+
+- "new_calc.py"  has code that carries out a high-speed numpy calculation
+
+- "add_values.sql" has code to update a polygonized raster. 
 
 How to run
 -------
