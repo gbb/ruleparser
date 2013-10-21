@@ -22,4 +22,4 @@ output_sql_filename = 'add_values.sql'
 
 # Where should the numpy calculation be stored?
 
-output_calc_filename = 'calc_new.sh'
+output_calc_filename = 'calc_new.bf'

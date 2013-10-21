@@ -14,7 +14,7 @@ from rp_settings import output_sql_filename, output_calc_filename
 
 if (len(sys.argv) < 3):
   print
-  print "Ruleparser: please provide a CSV spreadsheet and database name."
+  print "Ruleparser: please provide a CSV spreadsheet and database table name."
   print "For information about the format, please see README.md"
   print "./ruleparser.py  input.csv  my_postgres_table"
   print
