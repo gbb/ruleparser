@@ -76,6 +76,14 @@ The program will generate two files (and dump to screen).
 How to run
 -------
 
+First make sure you have installed the following e.g. with yum:
+
+- pip   (python-pip)
+- libxml, libxml2 and libxml2-devel
+- libxslt and libxslt-devel
+- lxml extension to python:  (pip install lxml)
+- pyparsing extension to python (easy_install pyparsing)
+
 How to run the code with an example file: 
 
 > ./ruleparser.py test.csv my_postgres_table
