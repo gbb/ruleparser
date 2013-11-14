@@ -5,4 +5,4 @@ old*
 *.lock*
 *dddb*
 add_values.sql
-calc_new.sh
+calc_new.bf
