@@ -47,12 +47,13 @@ def init_sql(filename, layer_name):
   return string
 
 def add_index_on_value_column(layer_name): 
-  return "create index " + layer_name + "_value_index on " + layer_name + " (value);\n"
+  return "create index " + layer_name.replace(".","_") + "_value_index on " + layer_name + " (value);\n"
 
 def define_output_columns(outputs, layer_name):
+  # need to use quoting or postgresql will not preserve case on characters
   string=u""
   for c in outputs:
-    string += u"alter table " + layer_name + " add column " + c[1] + " " + c[2] + ";\n"
+    string += u"alter table " + layer_name + " add column \"" + c[1] + "\" " + c[2] + ";\n"
   return string;
 
 
